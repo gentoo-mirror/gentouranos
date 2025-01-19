@@ -718,6 +718,8 @@ SRC_URI="${CARGO_CRATE_URIS}
 	gui? ( https://git.sr.ht/~antecrescent/gentoo-files/blob/main/app-misc/anki/anki-node_modules-${COMMITS[node_modules]}.tar.xz )
 "
 
+S="${WORKDIR}/anki-${MYPV}" # Redirige le répertoire vers le bon (normalement) chemin
+
 PATCHES=(
 	"${FILESDIR}"/24.06.3/ninja-gentoo-setup.patch
 	"${FILESDIR}"/24.06.3/remove-yarn.patch
