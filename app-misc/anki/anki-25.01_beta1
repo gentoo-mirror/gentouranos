@@ -705,7 +705,7 @@ HOMEPAGE="https://apps.ankiweb.net/"
 # folder.
 declare -A COMMITS=(
 	[anki]="87ccd24efd0ea635558b1679614b6763e4f514eb"
-	[ftl-core]="e1545f7f0ddeb617eeb1ca86e82862e552843578"
+	[ftl-core]="0d0d97e01a56e3dcd2cc2dd20f0bd17b4c05bcdc"
 	[ftl-desktop]="e0f9724f75f6248f4e74558b25c3182d4f348bce"
 	[node_modules]="67e7bf166027c4e9e0c5bb7fd778d38f44038512"
 )
