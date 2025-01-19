@@ -8,37 +8,42 @@ PYTHON_COMPAT=( python3_{10..13} )
 CRATES="
 	addr2line@0.24.2
 	adler2@2.0.0
-	adler@1.0.2
 	aes@0.8.4
 	ahash@0.8.11
 	aho-corasick@1.1.3
-	allocator-api2@0.2.18
+	allocator-api2@0.2.21
 	ammonia@4.0.0
 	android-tzdata@0.1.1
 	android_system_properties@0.1.5
-	anes@0.1.6
-	anstream@0.6.15
-	anstyle-parse@0.2.5
-	anstyle-query@1.1.1
-	anstyle-wincon@3.0.4
-	anstyle@1.0.8
-	anyhow@1.0.90
+	anki@0.0.0
+	anki-sync-server@0.0.0
+	anki_i18n@0.0.0
+	anki_io@0.0.0
+	anki_process@0.0.0
+	anki_proto@0.0.0
+	anki_proto_gen@0.0.0
+	anstream@0.6.18
+	anstyle@1.0.10
+	anstyle-parse@0.2.6
+	anstyle-query@1.1.2
+	anstyle-wincon@3.0.7
+	anyhow@1.0.95
 	apple-bundles@0.17.0
 	arrayref@0.3.9
 	arrayvec@0.7.6
 	ash@0.37.3+1.3.251
 	assert-json-diff@2.0.2
-	async-compression@0.4.17
-	async-stream-impl@0.3.6
+	async-compression@0.4.18
 	async-stream@0.3.6
-	async-trait@0.1.83
+	async-stream-impl@0.3.6
+	async-trait@0.1.85
 	atomic-waker@1.1.2
 	autocfg@1.4.0
+	axum@0.7.9
 	axum-client-ip@0.6.1
 	axum-core@0.4.5
-	axum-extra@0.9.4
+	axum-extra@0.9.6
 	axum-macros@0.4.2
-	axum@0.7.7
 	backtrace@0.3.74
 	base64@0.13.1
 	base64@0.21.7
@@ -49,13 +54,14 @@ CRATES="
 	bit-vec@0.6.3
 	bit_field@0.10.2
 	bitflags@1.3.2
-	bitflags@2.6.0
-	blake3@1.5.4
+	bitflags@2.8.0
+	blake3@1.5.5
+	block@0.1.6
 	block-buffer@0.10.4
 	block-padding@0.3.3
-	block@0.1.6
-	bstr@1.10.0
+	bstr@1.11.3
 	bumpalo@3.16.0
+	burn@0.13.2
 	burn-autodiff@0.13.2
 	burn-candle@0.13.2
 	burn-common@0.13.2
@@ -70,16 +76,14 @@ CRATES="
 	burn-tensor@0.13.2
 	burn-train@0.13.2
 	burn-wgpu@0.13.2
-	burn@0.13.2
-	bytemuck@1.19.0
-	bytemuck_derive@1.8.0
+	bytemuck@1.21.0
+	bytemuck_derive@1.8.1
 	byteorder@1.5.0
-	bytes@1.7.2
-	bzip2-sys@0.1.11+1.0.8
+	bytes@1.9.0
 	bzip2@0.4.4
+	bzip2-sys@0.1.11+1.0.8
 	camino@1.1.9
 	candle-core@0.4.1
-	cast@0.3.0
 	cbc@0.1.2
 	cc@1.1.31
 	cfg-if@1.0.0
@@ -683,7 +687,7 @@ CRATES="
 	zstd-sys@2.0.13+zstd.1.5.6
 	zstd@0.11.2+zstd.1.5.2
 	zstd@0.13.2
-	zune-inflate@0.2.54
+	zune-inflate@0.2.5
 "
 declare -A GIT_CRATES=(
 	[linkcheck]='https://github.com/ankitects/linkcheck;184b2ca50ed39ca43da13f0b830a463861adb9ca;linkcheck-%commit%'
