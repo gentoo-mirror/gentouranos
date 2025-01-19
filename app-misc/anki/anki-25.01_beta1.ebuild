@@ -171,7 +171,7 @@ CRATES="
 	forwarded-header-value@0.1.1
 	fs2@0.4.3
 	fsevent-sys@4.1.0
-	fsrs@1.4.3
+	fsrs@2.0.0
 	futf@0.1.5
 	futures-channel@0.3.31
 	futures-core@0.3.31
