@@ -5,8 +5,8 @@ EAPI=8
 
 DESCRIPTION="ART (Another RawTherapee) - A free, open-source, cross-platform raw image processing program"
 HOMEPAGE="https://art.pixls.us/"
-SRC_URI="https://github.com/artpixls/ART/releases/download/${PV}/${P}-linux64.tar.xz"
-S="${WORKDIR}/${P}-linux64"
+SRC_URI="https://github.com/artpixls/ART/releases/download/${PV}/${P}.tar.xz"
+
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -38,22 +38,14 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
 
-pkg_pretend() {
-	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
-}
 
 pkg_setup() {
-	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
+	if use openmp; then
+		echo "OpenMP is enabled"
+	fi
 }
 
 src_configure() {
-	# upstream tested that "fast-math" give wrong results, so filter it
-	# https://bugs.gentoo.org/show_bug.cgi?id=606896#c2
-	filter-flags -ffast-math
-	# -Ofast enable "fast-math" both in gcc and clang
-	replace-flags -Ofast -O3
-	# In case we add an ebuild for klt we can (i)use that one,
-	# see http://cecas.clemson.edu/~stb/klt/
 	local mycmakeargs=(
 		-DOPTION_OMP=$(usex openmp)
 		-DDOCDIR=/usr/share/doc/${PF}
@@ -65,16 +57,26 @@ src_configure() {
 		-DENABLE_TCMALLOC=$(usex tcmalloc)
 		-DWITH_JXL=$(usex jpegxl)
 	)
-	cmake_src_configure
+	cmake -B build -S "${S}" "${mycmakeargs[@]}" || die "CMake configuration failed"
+}
+
+src_compile() {
+	emake -C build || die "Compilation failed"
+}
+
+src_install() {
+	emake -C build install DESTDIR="${D}" || die "Installation failed"
+	domenu "${S}/data/art.desktop"
+	insinto /usr/share/icons/hicolor/scalable/apps
+	doins "${S}/data/art.svg"
 }
 
 pkg_postinst() {
-	xdg_icon_cache_update
-	xdg_desktop_database_update
+	xdg-icon-resource forceupdate --theme hicolor
+	update-desktop-database -q
 }
 
 pkg_postrm() {
-	xdg_icon_cache_update
-	xdg_desktop_database_update
+	xdg-icon-resource forceupdate --theme hicolor
+	update-desktop-database -q
 }
-
