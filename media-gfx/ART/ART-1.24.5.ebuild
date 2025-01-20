@@ -46,18 +46,13 @@ pkg_setup() {
 }
 
 src_configure() {
-	local mycmakeargs=(
-		-DOPTION_OMP=$(usex openmp)
-		-DDOCDIR=/usr/share/doc/${PF}
-		-DCREDITSDIR=/usr/share/${PN}
-		-DLICENCEDIR=/usr/share/${PN}
-		-DCACHE_NAME_SUFFIX=""
-		-DWITH_SYSTEM_KLT="off"
-		-DWITH_SYSTEM_LIBRAW="on"
-		-DENABLE_TCMALLOC=$(usex tcmalloc)
-		-DWITH_JXL=$(usex jpegxl)
-	)
-	cmake -B build -S "${S}" "${mycmakeargs[@]}" || die "CMake configuration failed"
+    cmake \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DENABLE_LTO=ON \
+        -DENABLE_OPENMP=ON \
+        -B build \
+        -S . || die "CMake configuration failed"
 }
 
 src_compile() {
@@ -66,9 +61,22 @@ src_compile() {
 
 src_install() {
 	emake -C build install DESTDIR="${D}" || die "Installation failed"
-	domenu "${S}/data/art.desktop"
-	insinto /usr/share/icons/hicolor/scalable/apps
-	doins "${S}/data/art.svg"
+	# Install .desktop
+    if [[ -f "${S}/build/rtdata/ART.desktop" ]]; then
+        insinto /usr/share/applications
+        doins "${S}/build/rtdata/ART.desktop"
+    else
+        ewarn "ART.desktop file not found, skipping installation."
+    fi
+
+	# Install logo
+    if [[ -f "${S}/rtdata/images/ART-logo.svg" ]]; then
+        insinto /usr/share/icons/hicolor/scalable/apps
+        doins "${S}/rtdata/images/ART-logo.svg"
+    else
+        ewarn "ART-logo.svg file not found, skipping icon installation."
+    fi
+	dodoc
 }
 
 pkg_postinst() {
