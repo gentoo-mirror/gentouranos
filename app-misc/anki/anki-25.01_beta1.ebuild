@@ -733,7 +733,7 @@ HOMEPAGE="https://apps.ankiweb.net/"
 # scheme prevents unnecessary downloads of the (sizeable) node_modules
 # folder.
 declare -A COMMITS=(
-	[anki]="87ccd24efd0ea635558b1679614b6763e4f514eb"
+	[anki]="7ba143bad8cfd60bf865c1274c1fc3e6c3d3886a"
 	[ftl-core]="0d0d97e01a56e3dcd2cc2dd20f0bd17b4c05bcdc"
 	[ftl-desktop]="e0f9724f75f6248f4e74558b25c3182d4f348bce"
 	[node_modules]="2c1a4895ba6d21233cbb4efdc43b0d4961c713a5"
