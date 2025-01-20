@@ -749,14 +749,14 @@ SRC_URI="${CARGO_CRATE_URIS}
 
 S="${WORKDIR}/anki-${MYPV}" # Redirige le répertoire vers le bon (normalement) chemin
 
-PATCHES=(
-	"${FILESDIR}"/24.06.3/ninja-gentoo-setup.patch
-	"${FILESDIR}"/24.06.3/remove-yarn.patch
-	"${FILESDIR}"/24.04.1/remove-mypy-protobuf.patch
-	"${FILESDIR}"/24.04.1/revert-cert-store-hack.patch
-	"${FILESDIR}"/23.12.1/ninja-rules-for-cargo.patch
-	"${FILESDIR}"/23.12.1/remove-formatter-dep.patch
-)
+#PATCHES=(
+#	"${FILESDIR}"/24.06.3/ninja-gentoo-setup.patch
+#	"${FILESDIR}"/24.06.3/remove-yarn.patch
+#	"${FILESDIR}"/24.04.1/remove-mypy-protobuf.patch
+#	"${FILESDIR}"/24.04.1/revert-cert-store-hack.patch
+#	"${FILESDIR}"/23.12.1/ninja-rules-for-cargo.patch
+#	"${FILESDIR}"/23.12.1/remove-formatter-dep.patch
+#)
 
 # How to get an up-to-date summary of runtime JS libs' licenses:
 # ./node_modules/.bin/license-checker-rseidelsohn --production --excludePackages anki --summary
