@@ -848,7 +848,7 @@ pkg_setup() {
 		python-single-r1_pkg_setup
 		export NODE_BINARY="${BROOT}"/usr/bin/node
 		export YARN_BINARY="${BROOT}"/usr/bin/yarn
-		export OFFLINE_BUILD=0
+		export OFFLINE_BUILD=1
 		if ! use debug; then
 			if tc-is-lto; then
 				export RELEASE=2
