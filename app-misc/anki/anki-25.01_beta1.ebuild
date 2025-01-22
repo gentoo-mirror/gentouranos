@@ -732,7 +732,7 @@ SRC_URI="${CARGO_CRATE_URIS}
 	-> anki-core-i18n-${COMMITS[ftl-core]}.gh.tar.gz
 	https://github.com/ankitects/anki-desktop-ftl/archive/${COMMITS[ftl-desktop]}.tar.gz
 	-> anki-desktop-ftl-${COMMITS[ftl-desktop]}.gh.tar.gz
-	gui? ( https://git.sr.ht/~antecrescent/gentoo-files/blob/main/app-misc/anki/anki-node_modules-${COMMITS[node_modules]}.tar.xz )
+	gui? ( https://github.com/OuraN2O/gentouranos/releases/download/25.01beta1/anki-25.01beta1-node_modules.tar.xz -> anki-node_modules-${COMMITS[node_modules]}.tar.xz )
 "
 
 S="${WORKDIR}/anki-${MYPV}" # Redirige le répertoire vers le bon (normalement) chemin
