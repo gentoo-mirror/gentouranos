@@ -76,7 +76,8 @@ src_install() {
     else
         ewarn "ART-logo.svg file not found, skipping icon installation."
     fi
-	dodoc -r *
+	# Install documentations
+	dodoc -r doc
 }
 
 pkg_postinst() {
