@@ -982,7 +982,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	ver_test ${REPLACING_VERSIONS} -lt 24.06.3-r1 && local FORCE_PRINT_ELOG=1
+	ver_test ${REPLACING_VERSIONS} -lt 24.11 && local FORCE_PRINT_ELOG=1
 	readme.gentoo_print_elog
 	if use gui; then
 		xdg_pkg_postinst
