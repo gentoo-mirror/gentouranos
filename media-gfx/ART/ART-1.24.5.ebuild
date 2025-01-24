@@ -24,7 +24,7 @@ RDEPEND="
 	media-libs/exiftool
 	media-libs/lcms:2
 	media-libs/lensfun
-	media-libs/libcanberra
+	media-libs/libcanberra-gtk3
 	media-libs/libiptcdata
 	media-libs/libraw
 	media-libs/opencolorio
