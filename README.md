@@ -6,3 +6,6 @@ If you have the knowledge to fix what I'm trying to do, **don't hesistate to wri
 ## Enable this overlay
 Using the `app-eselect/eselect-repository` tool, execute `sudo eselect repository add gentouranos git https://github.com/OuraN2O/gentouranos`.  
 Then sync with `sudo emaint sync -r gentouranos`
+
+## Ebuilds that don't currently work/Help wanted  
+- `app-misc/Anki=25.01_beta1` : Can build on my main machine but not on my laptop. When builds, screen doesn't work (maybe vulkan dependancy problem)
