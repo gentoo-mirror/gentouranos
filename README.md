@@ -9,4 +9,3 @@ Then sync with `sudo emaint sync -r gentouranos`
 
 ## Ebuilds that don't currently work/Help wanted  
 - `app-misc/anki-25.01_beta1` : Can build on my main machine but not on my laptop. When builds, screen doesn't work (maybe vulkan dependancy problem)
-- `app-misc/pinokio-3.3.29` : Draft
