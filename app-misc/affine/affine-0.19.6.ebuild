@@ -14,14 +14,13 @@ KEYWORDS="~amd64"
 IUSE=""
 
 COMMON_DEPEND="
-    dev-lang/node
     dev-util/yarn
     net-libs/nodejs
     sys-apps/bubblewrap
     "
 DEPEND="${COMMON_DEPEND}"
 RDEPEND="${COMMON_DEPEND}"
-BDEPEND="dev-lang/node dev-util/yarn"
+BDEPEND="net-libs/nodejs dev-util/yarn"
 
 S="${WORKDIR}/AFFiNE-${PV}"
 
@@ -33,10 +32,14 @@ src_unpack() {
 
 src_prepare() {
     default
+    rm -f "${S}/yarn.lock" || die "Failed to remove yarn.lock"
+
+    echo 'enableNetwork: false' > "${S}/.yarnrc.yml" || die "Failed to create .yarnrc.yml"
 }
 
 src_compile() {
-    yarn build --offline || die "Build failed"
+    yarn install --offline || die "Dependency installation failed"
+    yarn build || die "Build failed"
 }
 
 src_install() {
