@@ -6,7 +6,7 @@ EAPI=8
 DESCRIPTION="The next-generation collaborative knowledge base for teams"
 HOMEPAGE="https://affine.pro/"
 SRC_URI="https://github.com/toeverything/AFFiNE/archive/refs/tags/v${PV}.tar.gz \
-         mirror://local/affine-deps.tar.gz"
+         https://github.com/OuraN2O/gentouranos/releases/download/affine/affine-deps.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
