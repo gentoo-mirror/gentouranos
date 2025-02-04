@@ -1,0 +1,13 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=compile configure install postinst postrm setup
+DEPEND=dev-cpp/glibmm dev-cpp/gtkmm:3.0 dev-libs/mimalloc dev-util/desktop-file-utils llvm-runtimes/openmp media-gfx/exiv2 media-libs/ctl media-libs/exiftool media-libs/lcms:2 media-libs/lensfun media-libs/libcanberra-gtk3 media-libs/libiptcdata media-libs/libraw media-libs/opencolorio media-libs/openexr sci-libs/fftw x11-libs/gtk+:3 imageio? ( media-libs/openimageio ) jpegxl? ( media-libs/libjxl:= ) tcmalloc? ( dev-util/google-perftools )
+DESCRIPTION=ART (Another RawTherapee) - A free, open-source, cross-platform raw image processing program
+EAPI=8
+HOMEPAGE=https://art.pixls.us/
+IUSE=imageio jpegxl openmp tcmalloc
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=dev-cpp/glibmm dev-cpp/gtkmm:3.0 dev-libs/mimalloc dev-util/desktop-file-utils llvm-runtimes/openmp media-gfx/exiv2 media-libs/ctl media-libs/exiftool media-libs/lcms:2 media-libs/lensfun media-libs/libcanberra-gtk3 media-libs/libiptcdata media-libs/libraw media-libs/opencolorio media-libs/openexr sci-libs/fftw x11-libs/gtk+:3 imageio? ( media-libs/openimageio ) jpegxl? ( media-libs/libjxl:= ) tcmalloc? ( dev-util/google-perftools )
+SLOT=0
+SRC_URI=https://github.com/artpixls/ART/releases/download/1.25.2/ART-1.25.2.tar.xz
+_md5_=9833bf1f43e1150ef2dc1429ec31efa6
