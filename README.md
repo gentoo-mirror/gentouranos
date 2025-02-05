@@ -4,7 +4,7 @@ Although I try to do my best, you shouldn't expect any of my packages to build n
 If you have the knowledge to fix what I'm trying to do, **don't hesistate to write a PR**, it'll be much appreciated !!  
 
 ## Enable this overlay
-Using the `app-eselect/eselect-repository` tool, execute `sudo eselect repository add gentouranos git https://github.com/OuraN2O/gentouranos`.  
+Using the `app-eselect/eselect-repository` tool, execute `sudo eselect repository add gentouranos git https://github.com/OuraN2O/gentouranos` or `sudo eselect repository enable gentouranos`   
 Then sync with `sudo emaint sync -r gentouranos`
 
 ## Ebuilds that don't currently work/Help wanted  
